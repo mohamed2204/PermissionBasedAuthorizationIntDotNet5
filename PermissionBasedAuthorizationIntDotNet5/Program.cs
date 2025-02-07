@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using PermissionBasedAuthorizationIntDotNet5.Models;
 using System.Threading.Tasks;
 
 namespace PermissionBasedAuthorizationIntDotNet5
@@ -21,7 +22,7 @@ namespace PermissionBasedAuthorizationIntDotNet5
 
             try
             {
-                var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+                var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
 
                 await Seeds.DefaultRoles.SeedAsync(roleManager);

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using PermissionBasedAuthorizationIntDotNet5.Contants;
+using PermissionBasedAuthorizationIntDotNet5.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -9,11 +10,13 @@ namespace PermissionBasedAuthorizationIntDotNet5.Seeds
 {
     public static class DefaultUsers
     {
-        public static async Task SeedBasicUserAsync(UserManager<IdentityUser> userManager)
+        public static async Task SeedBasicUserAsync(UserManager<ApplicationUser> userManager)
         {
-            var defaultUser = new IdentityUser
+            var defaultUser = new ApplicationUser
             {
                 UserName = "basicuser@domain.com",
+                FirstName = "basicuser",
+                LastName = "basicuser",
                 Email = "basicuser@domain.com",
                 EmailConfirmed = true
             };
@@ -27,11 +30,13 @@ namespace PermissionBasedAuthorizationIntDotNet5.Seeds
             }
         }
 
-        public static async Task SeedSuperAdminUserAsync(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManger)
+        public static async Task SeedSuperAdminUserAsync(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManger)
         {
-            var defaultUser = new IdentityUser
+            var defaultUser = new ApplicationUser
             {
                 UserName = "superadmin@domain.com",
+                FirstName = "superadmin",
+                LastName = "superadmin",
                 Email = "superadmin@domain.com",
                 EmailConfirmed = true
             };

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PermissionBasedAuthorizationIntDotNet5.Data;
 using PermissionBasedAuthorizationIntDotNet5.Filters;
+using PermissionBasedAuthorizationIntDotNet5.Models;
 using System;
 
 namespace PermissionBasedAuthorizationIntDotNet5
@@ -32,7 +33,7 @@ namespace PermissionBasedAuthorizationIntDotNet5
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI();
 

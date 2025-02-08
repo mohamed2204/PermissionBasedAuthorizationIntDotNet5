@@ -10,7 +10,7 @@ using PermissionBasedAuthorizationIntDotNet5.Data;
 namespace PermissionBasedAuthorizationIntDotNet5.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250207190642_InitialCreate")]
+    [Migration("20250208123547_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
